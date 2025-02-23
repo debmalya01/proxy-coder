@@ -9,25 +9,48 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
-  "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:ai-helper.analyzeCode",
+    "onCommand:ai-helper.debugCode",
+    "onCommand:ai-helper.addComments"
+  ],
+  "main": "./src/extension.js",
   "contributes": {
-    "commands": [{
-      "command": "proxy.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "proxy.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "ai-helper.analyzeCode",
+        "title": "AI: Analyze Code"
+      },
+      {
+        "command": "ai-helper.debugCode",
+        "title": "AI: Debug Code"
+      },
+      {
+        "command": "ai-helper.addComments",
+        "title": "AI: Generate Documentation"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "vscode-test"
+    "test": "node ./test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.97.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
-    "eslint": "^9.19.0",
+    "@types/vscode": "^1.97.0",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.19.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "vscode": "^1.1.37"
   }
 }
