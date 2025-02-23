@@ -2,3 +2,5 @@
 /proxy/test
 /proxy/package-lock.json
 /proxy/.vscode/
+/proxy/.env
+/proxy/.vscode-test
