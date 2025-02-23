@@ -1,0 +1,4 @@
+/proxy/node_modules
+/proxy/test
+/proxy/package-lock.json
+/proxy/.vscode/
